@@ -15,7 +15,7 @@ poetry install
 
 (then follow installation instructions)
 
-### 2. Run the Main file**
+### **2. Run the Main file**
 ```
 poetry run python src/main.py
 ```
