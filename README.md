@@ -11,9 +11,11 @@ To install all project dependencies, make sure you have Poetry installed. If Poe
 curl -sSL https://install.python-poetry.org | python3 -
 
 poetry install
+```
 
 (then follow installation instructions)
 
 ### 2. Run the Main file**
-
+```
 poetry run python src/main.py
+```
