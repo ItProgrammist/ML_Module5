@@ -1,0 +1,195 @@
+2025-03-24 11:56:08,137 - INFO - Loading and processing data...
+2025-03-24 11:56:08,188 - INFO - Data loaded and processed successfully.
+2025-03-24 11:56:08,188 - INFO - ----- Fitting Random Forest model with GridSearchCV... -----
+2025-03-24 11:57:16,040 - INFO - The best Random Forest model: RandomForestClassifier(max_depth=10, min_samples_leaf=10, min_samples_split=7,
+                       n_estimators=20)
+2025-03-24 11:57:16,040 - INFO - Best params for the model: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': None, 'criterion': 'gini', 'max_depth': 10, 'max_features': 'sqrt', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 10, 'min_samples_split': 7, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 20, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+2025-03-24 11:57:16,040 - INFO - Accuracy on X_test data set: 0.7863
+2025-03-24 11:57:16,041 - INFO - RF: Writing the predicted data (DataFrame) into .csv file...
+2025-03-24 11:57:16,059 - INFO - Written successfully!
+2025-03-24 11:57:16,059 - INFO - ----- Fitting CatBoost model with GridSearchCV... -----
+2025-03-24 11:58:34,306 - ERROR - Error while training CatBoost: There is no trained model to use predict(). Use fit() to train model. Then use this method.
+2025-03-24 12:03:06,485 - INFO - Loading and processing data...
+2025-03-24 12:03:06,539 - INFO - Data loaded and processed successfully.
+2025-03-24 12:03:06,539 - INFO - ----- Fitting Random Forest model with GridSearchCV... -----
+2025-03-24 12:04:15,869 - INFO - The best Random Forest model: RandomForestClassifier(max_depth=10, min_samples_leaf=10, min_samples_split=7,
+                       n_estimators=30)
+2025-03-24 12:04:15,870 - INFO - Best params for the model: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': None, 'criterion': 'gini', 'max_depth': 10, 'max_features': 'sqrt', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 10, 'min_samples_split': 7, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 30, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+2025-03-24 12:04:15,870 - INFO - Accuracy on X_test data set: 0.7853
+2025-03-24 12:04:15,870 - INFO - RF: Writing the predicted data (DataFrame) into .csv file...
+2025-03-24 12:04:15,893 - INFO - Written successfully!
+2025-03-24 12:04:15,893 - INFO - ----- Fitting CatBoost model with GridSearchCV... -----
+2025-03-24 12:05:32,168 - INFO - The best CatBoost model: <catboost.core.CatBoostClassifier object at 0x157fadcd0>
+2025-03-24 12:05:32,169 - INFO - Best params for the model: {'iterations': 90, 'learning_rate': 0.2, 'depth': 6, 'loss_function': 'Logloss', 'random_seed': 42, 'verbose': 100, 'eval_metric': 'AUC', 'bagging_temperature': 0.0, 'l2_leaf_reg': 5, 'random_strength': 1}
+2025-03-24 12:05:32,169 - INFO - Accuracy on X_test data set: 0.7856
+2025-03-24 12:05:32,169 - INFO - CatBoost: Writing the predicted data (DataFrame) into .csv file...
+2025-03-24 12:05:32,177 - INFO - Written successfully!
+2025-03-24 12:17:31,344 - INFO - Loading and processing data...
+2025-03-24 12:17:31,349 - ERROR - Error while processing data: [Errno 2] No such file or directory: './data/train_data.csv/../data/test.csv'
+2025-03-24 12:17:31,349 - ERROR - Error loading model from model/catboost_model.joblib: [Errno 2] No such file or directory: 'model/catboost_model.joblib'
+2025-03-24 12:20:34,344 - INFO - Loading and processing data...
+2025-03-24 12:20:34,347 - ERROR - Error while processing data: [Errno 20] Not a directory: './data/train.csv/../data/test.csv'
+2025-03-24 12:20:34,347 - ERROR - Error loading model from model/catboost_model.joblib: [Errno 2] No such file or directory: 'model/catboost_model.joblib'
+2025-03-24 12:21:06,979 - INFO - Loading and processing data...
+2025-03-24 12:21:07,062 - INFO - Data loaded and processed successfully.
+2025-03-24 12:21:07,062 - INFO - ----- Fitting CatBoost model with GridSearchCV... -----
+2025-03-24 12:22:20,769 - INFO - The best CatBoost model: <catboost.core.CatBoostClassifier object at 0x11c4d54f0>
+2025-03-24 12:22:20,769 - INFO - Best params for the model: {'iterations': 90, 'learning_rate': 0.2, 'depth': 6, 'loss_function': 'Logloss', 'random_seed': 42, 'verbose': 100, 'eval_metric': 'AUC', 'bagging_temperature': 0.0, 'l2_leaf_reg': 5, 'random_strength': 1}
+2025-03-24 12:22:20,770 - INFO - Accuracy on X_test data set: 0.7856
+2025-03-24 12:22:20,772 - INFO - Model catboost_model.joblib saved successfully to model/catboost_model.joblib
+2025-03-24 12:22:20,772 - INFO - Catboost: Writing the predicted data (DataFrame) into .csv file...
+2025-03-24 12:22:20,783 - INFO - Written successfully!
+2025-03-24 12:22:20,785 - INFO - Model loaded successfully from model/catboost_model.joblib
+2025-03-24 12:22:20,785 - INFO - Loading and processing data for prediction...
+2025-03-24 12:22:20,811 - ERROR - Error while processing data: "['Transported'] not found in axis"
+2025-03-24 12:29:39,717 - INFO - Loading and processing data...
+2025-03-24 12:29:39,779 - INFO - Data loaded and processed successfully.
+2025-03-24 12:29:39,779 - INFO - ----- Fitting Random Forest model with GridSearchCV... -----
+2025-03-24 12:30:47,975 - INFO - The best Random Forest model: RandomForestClassifier(max_depth=10, min_samples_leaf=10, min_samples_split=5,
+                       n_estimators=10)
+2025-03-24 12:30:47,976 - INFO - Best params for the model: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': None, 'criterion': 'gini', 'max_depth': 10, 'max_features': 'sqrt', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 10, 'min_samples_split': 5, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 10, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+2025-03-24 12:30:47,976 - INFO - Accuracy on X_test data set: 0.7783
+2025-03-24 12:30:47,983 - INFO - Model random_forest_model.joblib saved successfully to model/random_forest_model.joblib
+2025-03-24 12:30:47,983 - INFO - Random_forest: Writing the predicted data (DataFrame) into .csv file...
+2025-03-24 12:30:47,983 - ERROR - Error occurred while writing the data for random_forest: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Transported
+
+2025-03-24 12:34:47,880 - INFO - Loading and processing data...
+2025-03-24 12:34:47,940 - INFO - Data loaded and processed successfully.
+2025-03-24 12:34:47,940 - INFO - ----- Fitting Random Forest model with GridSearchCV... -----
+2025-03-24 12:39:39,954 - INFO - Loading and processing data...
+2025-03-24 12:39:40,013 - INFO - Data loaded and processed successfully.
+2025-03-24 12:39:40,013 - INFO - ----- Fitting Random Forest model with GridSearchCV... -----
+2025-03-24 12:40:47,043 - INFO - The best Random Forest model: RandomForestClassifier(max_depth=10, min_samples_leaf=10, min_samples_split=7,
+                       n_estimators=20)
+2025-03-24 12:40:47,044 - INFO - Best params for the model: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': None, 'criterion': 'gini', 'max_depth': 10, 'max_features': 'sqrt', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 10, 'min_samples_split': 7, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 20, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+2025-03-24 12:40:47,044 - INFO - Accuracy on X_test data set: 0.7853
+2025-03-24 12:40:47,053 - INFO - Model random_forest_model.joblib saved successfully to model/random_forest_model.joblib
+2025-03-24 12:47:53,098 - INFO - Loading and processing data...
+2025-03-24 12:47:53,177 - INFO - Data loaded and processed successfully.
+2025-03-24 12:47:53,177 - INFO - ----- Fitting Random Forest model with GridSearchCV... -----
+2025-03-24 12:49:01,516 - INFO - The best Random Forest model: RandomForestClassifier(max_depth=10, min_samples_leaf=30, min_samples_split=5,
+                       n_estimators=30)
+2025-03-24 12:49:01,517 - INFO - Best params for the model: {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': None, 'criterion': 'gini', 'max_depth': 10, 'max_features': 'sqrt', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 30, 'min_samples_split': 5, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 30, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+2025-03-24 12:49:01,517 - INFO - Accuracy on X_test data set: 0.7863
+2025-03-24 12:49:01,530 - INFO - Model random_forest_model.joblib saved successfully to model/random_forest_model.joblib
+2025-03-24 12:50:30,191 - INFO - Model loaded successfully from model/random_forest_model.joblib
+2025-03-24 12:50:30,191 - INFO - Loading and processing data for prediction...
+2025-03-24 12:50:30,234 - ERROR - Error while processing data: "['Transported'] not found in axis"
+2025-03-24 12:58:08,200 - ERROR - Error loading model from model/кrandom_forest_model.joblib: [Errno 2] No such file or directory: 'model/кrandom_forest_model.joblib'
+2025-03-24 12:58:22,200 - ERROR - Error loading model from model/rrandom_forest_model.joblib: [Errno 2] No such file or directory: 'model/rrandom_forest_model.joblib'
+2025-03-24 12:58:30,712 - INFO - Model loaded successfully from model/random_forest_model.joblib
+2025-03-24 12:58:30,712 - INFO - Loading and processing data for prediction...
+2025-03-24 13:00:23,416 - INFO - Model loaded successfully from model/random_forest_model.joblib
+2025-03-24 13:00:23,417 - INFO - Loading and processing data for prediction...
+2025-03-24 13:01:00,847 - INFO - Model loaded successfully from model/random_forest_model.joblib
+2025-03-24 13:01:00,848 - INFO - Loading and processing data for prediction...
+2025-03-24 13:01:00,889 - ERROR - Error while processing data: "['Transported'] not found in axis"
+Traceback (most recent call last):
+  File "/Users/user/Desktop/Все Папки/HITs/2nd Grade/ML/dist/module_1_poetry-0.1.0/src/model.py", line 99, in predict
+    X_final, test_data = preprocess_data(dataset_filename)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Desktop/Все Папки/HITs/2nd Grade/ML/dist/module_1_poetry-0.1.0/src/preprocessing.py", line 18, in preprocess_data
+    X = train_data.drop(['PassengerId', 'Cabin', 'Destination', 'Name', 'Transported'], axis=1)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Library/Caches/pypoetry/virtualenvs/module-1-poetry-3SLOKt4i-py3.12/lib/python3.12/site-packages/pandas/core/frame.py", line 5581, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "/Users/user/Library/Caches/pypoetry/virtualenvs/module-1-poetry-3SLOKt4i-py3.12/lib/python3.12/site-packages/pandas/core/generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Library/Caches/pypoetry/virtualenvs/module-1-poetry-3SLOKt4i-py3.12/lib/python3.12/site-packages/pandas/core/generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/user/Library/Caches/pypoetry/virtualenvs/module-1-poetry-3SLOKt4i-py3.12/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['Transported'] not found in axis"
+
+2025-03-24 13:06:33,533 - INFO - Model loaded successfully from model/random_forest_model.joblib
+2025-03-24 13:06:33,534 - INFO - Loading and processing data for prediction...
+2025-03-24 13:06:33,564 - ERROR - Error while processing data: too many values to unpack (expected 2)
+Traceback (most recent call last):
+  File "/Users/user/Desktop/Все Папки/HITs/2nd Grade/ML/dist/module_1_poetry-0.1.0/src/model.py", line 99, in predict
+    X_final, test_data = preprocess_data(dataset_filename, mode='test')
+    ^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+
+2025-03-24 13:09:14,320 - INFO - Model loaded successfully from model/random_forest_model.joblib
+2025-03-24 13:09:14,321 - INFO - Loading and processing data for prediction...
+2025-03-24 13:09:14,350 - INFO - Data loaded and processed successfully for prediction.
+2025-03-24 13:09:14,350 - INFO - Making predictions using random_forest model...
+2025-03-24 13:09:14,350 - INFO - Random_forest: Writing the predicted data (DataFrame) into .csv file...
+2025-03-24 13:09:14,367 - INFO - Written successfully!
+2025-03-24 13:09:51,071 - INFO - Loading and processing data...
+2025-03-24 13:09:51,124 - INFO - Data loaded and processed successfully.
+2025-03-24 13:09:51,124 - INFO - ----- Fitting CatBoost model with GridSearchCV... -----
+2025-03-24 13:11:06,008 - INFO - The best CatBoost model: <catboost.core.CatBoostClassifier object at 0x11eba4170>
+2025-03-24 13:11:06,009 - INFO - Best params for the model: {'iterations': 90, 'learning_rate': 0.2, 'depth': 6, 'loss_function': 'Logloss', 'random_seed': 42, 'verbose': 100, 'eval_metric': 'AUC', 'bagging_temperature': 0.0, 'l2_leaf_reg': 5, 'random_strength': 1}
+2025-03-24 13:11:06,009 - INFO - Accuracy on X_test data set: 0.7856
+2025-03-24 13:11:06,011 - INFO - Model catboost_model.joblib saved successfully to model/catboost_model.joblib
+2025-03-24 13:13:38,451 - INFO - Model loaded successfully from model/catboost_model.joblib
+2025-03-24 13:13:38,451 - INFO - Loading and processing data for prediction...
+2025-03-24 13:13:38,486 - INFO - Data loaded and processed successfully for prediction.
+2025-03-24 13:13:38,486 - INFO - Making predictions using catboost model...
+2025-03-24 13:13:38,486 - INFO - Catboost: Writing the predicted data (DataFrame) into .csv file...
+2025-03-24 13:13:38,506 - INFO - Written successfully!
+2025-03-24 13:21:00,843 - INFO - Loading and processing data...
+2025-03-24 13:21:00,900 - INFO - Data loaded and processed successfully.
+2025-03-24 13:21:00,900 - INFO - ----- Fitting CatBoost model with GridSearchCV... -----
+2025-03-24 13:21:34,340 - INFO - Loading and processing data...
+2025-03-24 13:21:34,387 - INFO - Data loaded and processed successfully.
+2025-03-24 13:21:34,387 - INFO - ----- Fitting CatBoost model with GridSearchCV... -----
+2025-03-24 13:23:37,989 - INFO - Loading and processing data...
+2025-03-24 13:23:38,041 - INFO - Data loaded and processed successfully.
+2025-03-24 13:23:38,041 - INFO - ----- Fitting CatBoost model with GridSearchCV... -----
+2025-03-24 13:23:38,046 - ERROR - Error while training CatBoost: Only one of parameters ['verbose', 'logging_level', 'verbose_eval', 'silent'] should be set
+2025-03-24 13:24:00,048 - INFO - Loading and processing data...
+2025-03-24 13:24:00,095 - INFO - Data loaded and processed successfully.
+2025-03-24 13:24:00,095 - INFO - ----- Fitting CatBoost model with GridSearchCV... -----
+2025-03-24 13:24:35,638 - INFO - Loading and processing data...
+2025-03-24 13:24:35,686 - INFO - Data loaded and processed successfully.
+2025-03-24 13:24:35,686 - INFO - ----- Fitting CatBoost model with GridSearchCV... -----
+2025-03-24 13:25:33,643 - INFO - Best trial: {'iterations': 183, 'learning_rate': 0.014762739293101037, 'depth': 10, 'l2_leaf_reg': 0.0001240921336114638, 'bagging_temperature': 0.7425540914273608, 'random_strength': 0.10355942023374498}
+2025-03-24 13:25:33,644 - INFO - Best accuracy: 0.7859881491808993
+2025-03-24 13:25:34,883 - INFO - The best CatBoost model: <catboost.core.CatBoostClassifier object at 0x13c481fa0>
+2025-03-24 13:25:34,883 - INFO - Best params for the model: {'iterations': 183, 'learning_rate': 0.014762739293101037, 'depth': 10, 'l2_leaf_reg': 0.0001240921336114638, 'random_strength': 0.10355942023374498, 'bagging_temperature': 0.7425540914273608}
+2025-03-24 13:25:34,883 - INFO - Accuracy on X_test data set: 0.7842
+2025-03-24 13:25:34,894 - INFO - Model catboost_model.joblib saved successfully to model/catboost_model.joblib
+2025-03-24 13:26:17,128 - INFO - Model loaded successfully from model/catboost_model.joblib
+2025-03-24 13:26:17,128 - INFO - Loading and processing data for prediction...
+2025-03-24 13:26:17,153 - INFO - Data loaded and processed successfully for prediction.
+2025-03-24 13:26:17,153 - INFO - Making predictions using catboost model...
+2025-03-24 13:26:17,153 - INFO - Catboost: Writing the predicted data (DataFrame) into .csv file...
+2025-03-24 13:26:17,173 - INFO - Written successfully!
+2025-03-24 13:27:38,702 - INFO - Model loaded successfully from model/catboost_model.joblib
+2025-03-24 13:27:38,702 - INFO - Loading and processing data for prediction...
+2025-03-24 13:27:38,733 - INFO - Data loaded and processed successfully for prediction.
+2025-03-24 13:27:38,734 - INFO - Making predictions using catboost model...
+2025-03-24 13:27:38,734 - INFO - Catboost: Writing the predicted data (DataFrame) into .csv file...
+2025-03-24 13:27:38,754 - INFO - Written successfully!
+2025-03-24 13:28:12,177 - INFO - Model loaded successfully from model/random_forest_model.joblib
+2025-03-24 13:28:12,178 - INFO - Loading and processing data for prediction...
+2025-03-24 13:28:12,206 - INFO - Data loaded and processed successfully for prediction.
+2025-03-24 13:28:12,206 - INFO - Making predictions using random_forest model...
+2025-03-24 13:28:12,206 - INFO - Random_forest: Writing the predicted data (DataFrame) into .csv file...
+2025-03-24 13:28:12,223 - INFO - Written successfully!
+2025-03-24 13:48:30,419 - INFO - Loading and processing data...
+2025-03-24 13:48:30,472 - INFO - Data loaded and processed successfully.
+2025-03-24 13:48:30,472 - INFO - ----- Fitting CatBoost model with GridSearchCV... -----
+2025-03-24 13:48:30,477 - ERROR - Error while training CatBoost: name 'train_pool' is not defined
+2025-03-24 13:49:25,754 - INFO - Loading and processing data...
+2025-03-24 13:49:25,806 - INFO - Data loaded and processed successfully.
+2025-03-24 13:49:25,806 - INFO - ----- Fitting CatBoost model with GridSearchCV... -----
+2025-03-24 13:49:52,247 - INFO - Best trial: {'iterations': 141, 'learning_rate': 0.0605028355894559, 'depth': 4, 'l2_leaf_reg': 0.00035728562822943, 'bagging_temperature': 0.4015944991328864, 'random_strength': 4.422459738249499}
+2025-03-24 13:49:52,248 - INFO - Best accuracy: 0.7870338096897874
+2025-03-24 13:49:52,403 - INFO - The best CatBoost model: <catboost.core.CatBoostClassifier object at 0x13b92d9a0>
+2025-03-24 13:49:52,403 - INFO - Best params for the model: {'iterations': 141, 'learning_rate': 0.0605028355894559, 'depth': 4, 'l2_leaf_reg': 0.00035728562822943, 'random_strength': 4.422459738249499, 'bagging_temperature': 0.4015944991328864}
+2025-03-24 13:49:52,403 - INFO - Accuracy on X_test data set: 0.7853
+2025-03-24 13:49:52,409 - INFO - Model catboost_model.joblib saved successfully to model/catboost_model.joblib
+2025-03-24 13:50:28,993 - INFO - Model loaded successfully from model/catboost_model.joblib
+2025-03-24 13:50:28,993 - INFO - Loading and processing data for prediction...
+2025-03-24 13:50:29,022 - INFO - Data loaded and processed successfully for prediction.
+2025-03-24 13:50:29,022 - INFO - Making predictions using catboost model...
+2025-03-24 13:50:29,022 - INFO - Catboost: Writing the predicted data (DataFrame) into .csv file...
+2025-03-24 13:50:29,045 - INFO - Written successfully!

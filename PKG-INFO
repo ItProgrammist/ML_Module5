@@ -12,10 +12,13 @@ Classifier: Programming Language :: Python :: 3.10
 Classifier: Programming Language :: Python :: 3.11
 Classifier: Programming Language :: Python :: 3.12
 Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: catboost (>=1.2.7,<2.0.0)
+Requires-Dist: clearml (>=1.18.0,<2.0.0)
 Requires-Dist: jupyter (>=1.1.1,<2.0.0)
 Requires-Dist: matplotlib (>=3.10.1,<4.0.0)
 Requires-Dist: notebook (>=7.3.2,<8.0.0)
-Requires-Dist: numpy (>=2.2.3,<3.0.0)
+Requires-Dist: numpy (>=1.16.0,<2.0)
+Requires-Dist: optuna (>=4.2.1,<5.0.0)
 Requires-Dist: pandas (>=2.2.3,<3.0.0)
 Requires-Dist: scikit-learn (>=1.6.1,<2.0.0)
 Requires-Dist: seaborn (>=0.13.2,<0.14.0)
@@ -40,3 +43,4 @@ poetry install
 ### 2. Run the Main file**
 
 poetry run python src/main.py
+
