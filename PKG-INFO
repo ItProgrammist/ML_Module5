@@ -1,0 +1,46 @@
+Metadata-Version: 2.3
+Name: module-1-poetry
+Version: 0.1.0
+Summary: A data science project for predicting Space Titanic survivors using machine learning models like Random Forest + Catboost
+License: MIT
+Author: Kozlov Dmitry
+Author-email: kozlovdmitrij796@gmail.com
+Requires-Python: >=3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: catboost (>=1.2.7,<2.0.0)
+Requires-Dist: clearml (>=1.18.0,<2.0.0)
+Requires-Dist: jupyter (>=1.1.1,<2.0.0)
+Requires-Dist: matplotlib (>=3.10.1,<4.0.0)
+Requires-Dist: notebook (>=7.3.2,<8.0.0)
+Requires-Dist: numpy (>=1.16.0,<2.0)
+Requires-Dist: optuna (>=4.2.1,<5.0.0)
+Requires-Dist: pandas (>=2.2.3,<3.0.0)
+Requires-Dist: scikit-learn (>=1.6.1,<2.0.0)
+Requires-Dist: seaborn (>=0.13.2,<0.14.0)
+Description-Content-Type: text/markdown
+
+**Full Name**: [Дмитрий Козлов]
+**Group**: [972301]
+
+## How To
+
+### 1. **Install Poetry and Project Dependencies**
+To install all project dependencies, make sure you have Poetry installed. If Poetry is not already installed, run the command:
+
+
+```bash
+curl -sSL https://install.python-poetry.org | python3 -
+
+poetry install
+
+(then follow installation instructions)
+
+### 2. Run the Main file**
+
+poetry run python src/main.py
+
