@@ -6,9 +6,11 @@ import joblib
 from pathlib import Path
 import logging
 import traceback
+import os
 from preprocessing import preprocess_data
 from models import train_random_forest, train_catboost
 from clearml import Task
+
 
 class Logger:
     """
@@ -35,28 +37,29 @@ class My_Classifier_Model:
         self.model_name = f'{model_type}_model.joblib'
         self.logger = Logger().logger
         
+        self.task = None
         self.setup_clearml()
 
-        self.task = Task.init(
-            project_name='model_project', 
-            task_name='train_model', 
-            task_type=Task.TaskTypes.optimizer
-        )
-
     def setup_clearml(self):
-        self.api_server = 'http://<your-server-address>'
-        self.web_server = 'http://<your-server-address>'
-        self.access_key = '<your-access-key>'
-        self.secret_key = '<your-secret-key>'
+        """
+        Initializes the ClearML task and ensures no task conflicts.
+        """
+        # It's crucial to export these keys into environment variables!!
+        self.access_key = os.getenv('CLEARML_ACCESS_KEY')
+        self.secret_key = os.getenv('CLEARML_SECRET_KEY')
+
+        if not self.access_key or not self.secret_key:
+            print("Error: Couldn't find ClearML Access and/or Secret Key.")
+            return
         
-        from clearml import Task
-        Task.init(
+        # Create or reuse task
+        if self.task is not None:
+            self.task.close()
+
+        self.task = Task.init(
             project_name='model_project',
             task_name='train_model',
-            api_server=self.api_server,
-            web_server=self.web_server,
-            access_key=self.access_key,
-            secret_key=self.secret_key
+            task_type=Task.TaskTypes.optimizer
         )
 
     def train(self, dataset_filename):
@@ -102,6 +105,7 @@ class My_Classifier_Model:
                 print(f'Best params for the model:')
                 print(self.model.get_params())
                 print(f'Accuracy on X_test data set: {accuracy:.4f}')
+            
             except Exception as e:
                 self.logger.error(f'Error while training CatBoost: {e}')
                 print(f'Error while training CatBoost: {e}')
@@ -111,6 +115,8 @@ class My_Classifier_Model:
 
     def save_model(self):
         model_path = Path('./model') / self.model_name
+        model_path.parent.mkdir(parents=True, exist_ok=True)
+
         try:
             joblib.dump(self.model, model_path)
             self.logger.info(f'Model {self.model_name} saved successfully to {model_path}')
@@ -118,13 +124,19 @@ class My_Classifier_Model:
         except Exception as e:
             self.logger.error(f'Error saving model {self.model_name}: {e}')
             print(f'Error saving model {self.model_name}: {e}')
+        finally:
+            if self.task:
+                self.logger.info("Closing ClearML task...")
+                self.task.close()
 
     def predict(self, dataset_filename):
         model_path = Path('./model') / self.model_name
+        
         try:
             self.model = joblib.load(model_path)
             self.logger.info(f'Model loaded successfully from {model_path}')
             print(f'Model loaded successfully from {model_path}')
+        
         except Exception as e:
             self.logger.error(f'Error loading model from {model_path}: {e}')
             print(f'Error loading model from {model_path}: {e}')
@@ -135,7 +147,9 @@ class My_Classifier_Model:
 
         try:
             X_final, test_data = preprocess_data(dataset_filename, mode='test')
+
             self.logger.info('Data loaded and processed successfully for prediction.')
+        
         except Exception as e:
             error_message = f"Error while processing data: {e}\n{traceback.format_exc()}"
             self.logger.error(error_message)
@@ -148,15 +162,20 @@ class My_Classifier_Model:
         predicted_file_name = f'prediction_{self.model_type}.csv'
         self.logger.info(f'{self.model_type.capitalize()}: Writing the predicted data (DataFrame) into .csv file...')
         print(f'{self.model_type.capitalize()}: Writing the predicted data (DataFrame) into .csv file...')
+        
         try:
             y_pred_all = self.model.predict(X_final)
             final_prediction_df = pd.DataFrame(data={'PassengerId': test_data.PassengerId, 'Transported': y_pred_all})
             final_prediction_df.to_csv(f'./results_data/{predicted_file_name}', index=False)
+            
             self.logger.info('Written successfully!')
             print('Written successfully!')
+
         except Exception as e:
+
             self.logger.error(f'Error occurred while writing the data for {self.model_type}: {e}')
             print(f'Error occurred while writing the data for {self.model_type}.')
+
 
 def main():
     parser = argparse.ArgumentParser(description="Train and evaluate a classifier.")
@@ -176,6 +195,7 @@ def main():
         model.train(args.dataset)
     elif args.mode == 'predict':
         model.predict(args.dataset)
+
 
 if __name__ == '__main__':
     main()
