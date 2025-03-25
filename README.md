@@ -11,10 +11,19 @@ To install all project dependencies, make sure you have Poetry installed. If Poe
 curl -sSL https://install.python-poetry.org | python3 -
 
 poetry install
-
+```
 (then follow installation instructions)
 
 ### **2. Run the Main file**
+
+poetry run python src/model.py
+
+train
+```bash
+poetry run python src/model.py train --dataset="data/train.csv"
 ```
-poetry run python src/main.py
+
+predict
+```bash
+poetry run python src/model.py predict --dataset="data/test.csv"
 ```
