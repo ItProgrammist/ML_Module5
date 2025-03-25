@@ -32,12 +32,12 @@ def objective(trial, X_train, X_test, y_train, y_test):
     test_pool = Pool(data=X_test, label=y_test)
 
     parameters_cb = {
-        'iterations': trial.suggest_int('iterations', 50, 500),
-        'learning_rate': trial.suggest_loguniform('learning_rate', 1e-4, 0.3),
-        'depth': trial.suggest_int('depth', 4, 10),
-        'l2_leaf_reg': trial.suggest_loguniform('l2_leaf_reg', 1e-5, 10),
-        'bagging_temperature': trial.suggest_uniform('bagging_temperature', 0.0, 1.0),
-        'random_strength': trial.suggest_uniform('random_strength', 0.1, 10.0),
+        'iterations': trial.suggest_categorical('iterations', [90, 100]),
+        'learning_rate': trial.suggest_loguniform('learning_rate', 1e-3, 0.1),
+        'depth': trial.suggest_int('depth', 4, 8),
+        'l2_leaf_reg': trial.suggest_loguniform('l2_leaf_reg', 1e-4, 1),
+        'bagging_temperature': trial.suggest_uniform('bagging_temperature', 0.1, 0.5),
+        'random_strength': trial.suggest_uniform('random_strength', 0.5, 3.0),
         'loss_function': 'Logloss',
         'eval_metric': 'AUC',
         'random_seed': 42,
