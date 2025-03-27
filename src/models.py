@@ -33,11 +33,11 @@ def objective(trial, X_train, X_test, y_train, y_test):
 
     parameters_cb = {
         'iterations': trial.suggest_categorical('iterations', [90, 100]),
-        'learning_rate': trial.suggest_loguniform('learning_rate', 1e-3, 0.1),
-        'depth': trial.suggest_int('depth', 4, 8),
-        'l2_leaf_reg': trial.suggest_loguniform('l2_leaf_reg', 1e-4, 1),
-        'bagging_temperature': trial.suggest_uniform('bagging_temperature', 0.1, 0.5),
-        'random_strength': trial.suggest_uniform('random_strength', 0.5, 3.0),
+        'learning_rate': trial.suggest_categorical('learning_rate', [0.01, 0.05, 0.1]),
+        'depth': trial.suggest_categorical('depth', [4, 6]),
+        'l2_leaf_reg': trial.suggest_categorical('l2_leaf_reg', [1e-3, 1e-2, 0.1]),
+        'bagging_temperature': trial.suggest_categorical('bagging_temperature', [0.1, 0.3, 0.5]),
+        'random_strength': trial.suggest_categorical('random_strength', [0.5, 1.0, 2.0]),
         'loss_function': 'Logloss',
         'eval_metric': 'AUC',
         'random_seed': 42,
