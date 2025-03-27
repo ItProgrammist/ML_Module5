@@ -46,8 +46,6 @@ clearml-init
 
 ### **3. Run the Main file**
 
-poetry run python src/model.py
-
 train
 ```bash
 poetry run python src/model.py train --dataset="data/train.csv"
