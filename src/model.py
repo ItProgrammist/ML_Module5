@@ -31,16 +31,16 @@ class Logger:
 
 
 class My_Classifier_Model:
-    def __init__(self, model_type='random_forest'):
+    def __init__(self, mode='train', model_type='random_forest'):
         self.model_type = model_type
         self.model = None
         self.model_name = f'{model_type}_model.joblib'
         self.logger = Logger().logger
         
         self.task = None
-        self.setup_clearml()
+        self.setup_clearml(mode)
 
-    def setup_clearml(self):
+    def setup_clearml(self, mode):
         """
         Initializes the ClearML task and ensures no task conflicts.
         """
@@ -58,7 +58,7 @@ class My_Classifier_Model:
 
         self.task = Task.init(
             project_name='model_project',
-            task_name='train_model',
+            task_name=mode,
             task_type=Task.TaskTypes.optimizer
         )
 
@@ -232,7 +232,7 @@ def main():
     else:
         model_type = input("Enter the model type for prediction ('random_forest' or 'catboost'): ").strip()
 
-    model = My_Classifier_Model(model_type=model_type)
+    model = My_Classifier_Model(args.mode, model_type=model_type)
 
     if args.mode == 'train':
         model.train(args.dataset)
