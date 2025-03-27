@@ -14,7 +14,37 @@ poetry install
 ```
 (then follow installation instructions)
 
-### **2. Run the Main file**
+### **2. Install ClearML** ###
+
+```bash
+python3 -m venv clearml-env  # Create virtual environment
+source clearml-env/bin/activate  # Activate virtual environment
+pip install clearml
+nano ~/.zshrc
+```
+
+(Or if you use bash)
+```bash
+nano ~/.bash_profile
+```
+
+Add these strings at the end of the file:
+```bash
+export CLEARML_ACCESS_KEY="your_access_key"
+export CLEARML_SECRET_KEY="your_secret_key"
+```
+
+Make changes active
+```bash
+source ~/.zshrc
+```
+
+Initialize ClearML Project
+```bash
+clearml-init
+```
+
+### **3. Run the Main file**
 
 poetry run python src/model.py
 
